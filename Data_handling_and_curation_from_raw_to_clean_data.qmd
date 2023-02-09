@@ -160,7 +160,7 @@ penguins_long |>
 
 What are attributes of good code?
 
-Have a look at the "notReproducible.rmd" file
+Have a look at the "notReproducible.qmd" file
 
 ## Tidyverse style guide
 
@@ -257,15 +257,13 @@ One of the biggest barriers to sharing data is a lack of standardisation and met
 
 ## Using open data
 
-![](img/41559_2017_458_Fig1_HTML.webp)
-Culina, A., Baglioni, M., Crowther, T.W. et al. Navigating the unfolding open data landscape in ecology and evolution. Nat Ecol Evol 2, 420–426 (2018). https://doi.org/10.1038/s41559-017-0458-2
+![](img/41559_2017_458_Fig1_HTML.webp) Culina, A., Baglioni, M., Crowther, T.W. et al. Navigating the unfolding open data landscape in ecology and evolution. Nat Ecol Evol 2, 420--426 (2018). https://doi.org/10.1038/s41559-017-0458-2
 
 ## 
 
 ```{=html}
 <iframe width="780" height="500"src="https://data.livingnorway.no/dataset?key=aea17af8-5578-4b04-b5d3-7adf0c5a1e60"></iframe>
 ```
-
 ## Getting data through R (one way)
 
 ```{r}
@@ -286,7 +284,7 @@ download.file(endpoint_url, localDataLoc, mode = "wb")
 
 ```
 
-##
+## 
 
 ```{r}
 ## list the files in the archive
@@ -301,22 +299,21 @@ eml=EML::read_eml(f)
 
 ```
 
-##
+## 
 
 ```{r}
 occurence
 
 ```
 
-
-##
+## 
 
 ```{r}
 measure 
 
 ```
 
-##
+## 
 
 ```{r}
 eml$additionalMetadata$metadata$gbif$citation
@@ -324,7 +321,7 @@ eml$dataset$title
 eml$dataset$abstract
 ```
 
-##
+## 
 
 ```{r}
 # join measure to occurrence 
@@ -338,7 +335,7 @@ joined_dat |>
 
 ```
 
-##
+## 
 
 ```{r}
 # Model weight by length
@@ -361,8 +358,7 @@ joined_dat_clean|>
 
 ```
 
-
-##
+## 
 
 ```{r}
 weight_length<-joined_dat_clean |> 
@@ -379,4 +375,3 @@ weight_length |>
   theme_classic()
 
 ```
-
