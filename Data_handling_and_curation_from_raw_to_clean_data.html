@@ -1299,7 +1299,7 @@ $title
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Model weight by length</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="co"># need to fix the errors (wrong cols)</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a>joined_dat <span class="sc">|&gt;</span> </span>
+<span id="cb43-3"><a href="#cb43-3"></a>joined_dat_clean<span class="ot">&lt;-</span>joined_dat <span class="sc">|&gt;</span> </span>
 <span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">mutate</span>(<span class="at">Value=</span><span class="fu">case_when</span>(</span>
 <span id="cb43-5"><a href="#cb43-5"></a>    measurementType<span class="sc">==</span><span class="st">"Weight"</span><span class="sc">~</span> measurementUnit,</span>
 <span id="cb43-6"><a href="#cb43-6"></a>    measurementType<span class="sc">==</span><span class="st">"Length"</span><span class="sc">~</span> measurementValue),</span>
@@ -1307,44 +1307,13 @@ $title
 <span id="cb43-8"><a href="#cb43-8"></a>      measurementType<span class="sc">==</span><span class="st">"Weight"</span><span class="sc">~</span> measurementValue,</span>
 <span id="cb43-9"><a href="#cb43-9"></a>      measurementType<span class="sc">==</span><span class="st">"Length"</span><span class="sc">~</span> measurementUnit</span>
 <span id="cb43-10"><a href="#cb43-10"></a>      </span>
-<span id="cb43-11"><a href="#cb43-11"></a>    )) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 68,224 x 37
-        id modif~1 insti~2 colle~3 basis~4 dynam~5 occur~6 catal~7 occur~8   sex
-     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;int&gt;
- 1 5215659 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5215659 5215659 ""         NA
- 2 5215659 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5215659 5215659 ""         NA
- 3 5294610 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5294610 5294610 ""         NA
- 4 5294610 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5294610 5294610 ""         NA
- 5 5294435 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5294435 5294435 ""         NA
- 6 5294435 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5294435 5294435 ""         NA
- 7 5294765 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5294765 5294765 ""         NA
- 8 5294765 2022-0~ NINA    Fiskme~ HumanO~ "\"{\"~ 5294765 5294765 ""         NA
- 9 5814209 2020-1~ NINA    Fiskme~ HumanO~ "\"{\"~ 5814209 5814209 ""          2
-10 5814209 2020-1~ NINA    Fiskme~ HumanO~ "\"{\"~ 5814209 5814209 ""          2
-# ... with 68,214 more rows, 27 more variables: lifeStage &lt;chr&gt;,
-#   associatedReferences &lt;chr&gt;, samplingProtocol &lt;chr&gt;, year &lt;int&gt;,
-#   month &lt;int&gt;, day &lt;int&gt;, country &lt;chr&gt;, stateProvince &lt;chr&gt;, county &lt;chr&gt;,
-#   locality &lt;chr&gt;, decimalLatitude &lt;dbl&gt;, decimalLongitude &lt;dbl&gt;,
-#   coordinatePrecision &lt;int&gt;, scientificName &lt;chr&gt;, kingdom &lt;chr&gt;,
-#   phylum &lt;chr&gt;, class &lt;chr&gt;, order &lt;chr&gt;, family &lt;chr&gt;, genus &lt;chr&gt;,
-#   specificEpithet &lt;chr&gt;, vernacularName &lt;chr&gt;, measurementType &lt;chr&gt;, ...</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>joined_dat_clean<span class="ot">&lt;-</span>joined_dat <span class="sc">|&gt;</span> </span>
-<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">mutate</span>(<span class="at">Value=</span><span class="fu">case_when</span>(</span>
-<span id="cb45-3"><a href="#cb45-3"></a>    measurementType<span class="sc">==</span><span class="st">"Weight"</span><span class="sc">~</span> measurementUnit,</span>
-<span id="cb45-4"><a href="#cb45-4"></a>    measurementType<span class="sc">==</span><span class="st">"Length"</span><span class="sc">~</span> measurementValue),</span>
-<span id="cb45-5"><a href="#cb45-5"></a>    <span class="at">unit=</span><span class="fu">case_when</span>(</span>
-<span id="cb45-6"><a href="#cb45-6"></a>      measurementType<span class="sc">==</span><span class="st">"Weight"</span><span class="sc">~</span> measurementValue,</span>
-<span id="cb45-7"><a href="#cb45-7"></a>      measurementType<span class="sc">==</span><span class="st">"Length"</span><span class="sc">~</span> measurementUnit</span>
-<span id="cb45-8"><a href="#cb45-8"></a>      </span>
-<span id="cb45-9"><a href="#cb45-9"></a>    )) <span class="sc">|&gt;</span> </span>
-<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">mutate</span>(<span class="at">measurementValue=</span>Value,</span>
-<span id="cb45-11"><a href="#cb45-11"></a>         <span class="at">measurementUnit=</span>unit) <span class="sc">|&gt;</span> </span>
-<span id="cb45-12"><a href="#cb45-12"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Value, unit))</span>
-<span id="cb45-13"><a href="#cb45-13"></a></span>
-<span id="cb45-14"><a href="#cb45-14"></a>joined_dat_clean<span class="sc">|&gt;</span> </span>
-<span id="cb45-15"><a href="#cb45-15"></a> data.table<span class="sc">::</span><span class="fu">data.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-11"><a href="#cb43-11"></a>    )) <span class="sc">|&gt;</span> </span>
+<span id="cb43-12"><a href="#cb43-12"></a>  <span class="fu">mutate</span>(<span class="at">measurementValue=</span>Value,</span>
+<span id="cb43-13"><a href="#cb43-13"></a>         <span class="at">measurementUnit=</span>unit) <span class="sc">|&gt;</span> </span>
+<span id="cb43-14"><a href="#cb43-14"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Value, unit))</span>
+<span id="cb43-15"><a href="#cb43-15"></a></span>
+<span id="cb43-16"><a href="#cb43-16"></a>joined_dat_clean<span class="sc">|&gt;</span> </span>
+<span id="cb43-17"><a href="#cb43-17"></a> data.table<span class="sc">::</span><span class="fu">data.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            id                modified institutionCode collectionCode
     1: 5215659 2022-02-02 13:07:58.973            NINA       Fiskmerk
@@ -1460,18 +1429,18 @@ $title
 <section id="section-16" class="slide level2">
 <h2></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>weight_length<span class="ot">&lt;-</span>joined_dat_clean <span class="sc">|&gt;</span> </span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">filter</span>(vernacularName<span class="sc">==</span><span class="st">"Laks"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">select</span>(id,</span>
-<span id="cb47-4"><a href="#cb47-4"></a>         measurementType, measurementValue) <span class="sc">|&gt;</span> </span>
-<span id="cb47-5"><a href="#cb47-5"></a>  <span class="fu">pivot_wider</span>(id, <span class="at">names_from =</span>measurementType, <span class="at">values_from =</span> measurementValue )</span>
-<span id="cb47-6"><a href="#cb47-6"></a></span>
-<span id="cb47-7"><a href="#cb47-7"></a>weight_length <span class="sc">|&gt;</span> </span>
-<span id="cb47-8"><a href="#cb47-8"></a>  <span class="fu">mutate</span>(<span class="at">Weight=</span><span class="fu">as.numeric</span>(Weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb47-9"><a href="#cb47-9"></a>  <span class="fu">mutate</span>(<span class="at">Length=</span><span class="fu">as.numeric</span>(Length)) <span class="sc">|&gt;</span> </span>
-<span id="cb47-10"><a href="#cb47-10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Weight, Length)) <span class="sc">+</span></span>
-<span id="cb47-11"><a href="#cb47-11"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"darksalmon"</span>)<span class="sc">+</span></span>
-<span id="cb47-12"><a href="#cb47-12"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>weight_length<span class="ot">&lt;-</span>joined_dat_clean <span class="sc">|&gt;</span> </span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">filter</span>(vernacularName<span class="sc">==</span><span class="st">"Laks"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">select</span>(id,</span>
+<span id="cb45-4"><a href="#cb45-4"></a>         measurementType, measurementValue) <span class="sc">|&gt;</span> </span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="fu">pivot_wider</span>(id, <span class="at">names_from =</span>measurementType, <span class="at">values_from =</span> measurementValue )</span>
+<span id="cb45-6"><a href="#cb45-6"></a></span>
+<span id="cb45-7"><a href="#cb45-7"></a>weight_length <span class="sc">|&gt;</span> </span>
+<span id="cb45-8"><a href="#cb45-8"></a>  <span class="fu">mutate</span>(<span class="at">Weight=</span><span class="fu">as.numeric</span>(Weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb45-9"><a href="#cb45-9"></a>  <span class="fu">mutate</span>(<span class="at">Length=</span><span class="fu">as.numeric</span>(Length)) <span class="sc">|&gt;</span> </span>
+<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Weight, Length)) <span class="sc">+</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"darksalmon"</span>)<span class="sc">+</span></span>
+<span id="cb45-12"><a href="#cb45-12"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="Data_handling_and_curation_from_raw_to_clean_data_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"><div class="footer footer-default">
