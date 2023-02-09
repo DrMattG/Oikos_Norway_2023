@@ -7,6 +7,7 @@
 #'
 #' @examples 
 #' messy_data(n=20)
+#' 
 messy_data <- function(n = 20) {
   
   dates<-c("02/02/23","01-01-2023","2023/02/01",
