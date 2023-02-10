@@ -156,6 +156,17 @@ penguins_long |>
 
 ```
 
+## Messy data 
+
+Look at the messy data dataset. How would you go about cleaning this dataset?
+
+```{r}
+messy_data <- readRDS("C:/Users/matthew.grainger/Documents/Projects_in_development/Oikos_Norway_2023/messy_data.rds")
+
+messy_data |> data.table::data.table()
+
+```
+
 ## Code style
 
 What are attributes of good code?
@@ -257,7 +268,7 @@ One of the biggest barriers to sharing data is a lack of standardisation and met
 
 ## Using open data
 
-![](img/41559_2017_458_Fig1_HTML.webp) Culina, A., Baglioni, M., Crowther, T.W. et al. Navigating the unfolding open data landscape in ecology and evolution. Nat Ecol Evol 2, 420--426 (2018). https://doi.org/10.1038/s41559-017-0458-2
+![Culina, et al. Navigating the unfolding open data landscape in ecology and evolution. Nat Ecol Evol 2, 420--426 (2018). https://doi.org/10.1038/s41559-017-0458-2](img/41559_2017_458_Fig1_HTML.webp)
 
 ## 
 
