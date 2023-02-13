@@ -3,10 +3,19 @@ title: "Data curation, coding style and sharing data"
 format: 
   revealjs:
     theme: moon
+    logo: "img/Leaf_LN.png"
 execute:
   echo: true
 editor: visual
 ---
+
+## 
+![](img/QRcode.png)
+
+* https://github.com/DrMattG/Oikos_Norway_2023
+* .../blob/main/messy_data.rds
+* .../blob/main/notReproducible.qmd
+
 
 ## ![](img/Ecology_data.jfif)
 
@@ -156,7 +165,7 @@ penguins_long |>
 
 ```
 
-## Messy data 
+## Messy data
 
 Look at the messy data dataset. How would you go about cleaning this dataset?
 

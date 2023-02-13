@@ -394,6 +394,15 @@
 
 </section>
 <section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="img/QRcode.png" class="r-stretch"><ul>
+<li>https://github.com/DrMattG/Oikos_Norway_2023</li>
+<li>…/blob/main/messy_data.rds</li>
+<li>…/blob/main/notReproducible.qmd</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
 <h2><img data-src="img/Ecology_data.jfif"></h2>
 </section>
 <section id="the-data-life-cycle" class="slide level2">
@@ -444,7 +453,7 @@
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <h3 id="dplyr">{dplyr}</h3>
 <div class="cell">
@@ -474,7 +483,7 @@ $ comments          &lt;chr&gt; "Not enough blood for isotopes.", NA, NA, "Adult
 </div>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <h3 id="skimr">{skimr}</h3>
 <div class="cell">
@@ -804,7 +813,7 @@ $ comments          &lt;chr&gt; "Not enough blood for isotopes.", NA, NA, "Adult
 </div>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <h3 id="dplyr-1">{dplyr}</h3>
 <div class="cell">
@@ -825,7 +834,7 @@ $ comments          &lt;chr&gt; "Not enough blood for isotopes.", NA, NA, "Adult
 </div>
 </div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <h3 id="naniar">{naniar}</h3>
 <div class="cell">
@@ -856,7 +865,7 @@ $ comments          &lt;chr&gt; "Not enough blood for isotopes.", NA, NA, "Adult
 <span id="cb15-18"><a href="#cb15-18"></a><span class="co">#browseURL("validation_report.html")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">print</span>(report)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -969,7 +978,7 @@ Advanced view:
 <span id="cb24-2"><a href="#cb24-2"></a></span>
 <span id="cb24-3"><a href="#cb24-3"></a>messy_data <span class="sc">|&gt;</span> data.table<span class="sc">::</span><span class="fu">data.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           date    sex      age         species       lat      lon count
+<pre><code>           Date    SEX      age    Species Name       lat      lon count
   1: 2023/02/01   male    Adult    Lagopus matu  9.123826 62.92628     5
   2:   02/02/23 Female Juvenile    Logopus muta  7.836517 61.70676     9
   3: 2023/02/01   male        J    Logopus muta  9.387262 63.84034    15
@@ -1070,7 +1079,7 @@ Advanced view:
  98:   02/02/23 FEMALE    Adult    Lagopus muta 10.193635 62.98715    15
  99:   02/02/23   MALE        J    Logopus muta  8.798305 63.96787     5
 100: 2023-02-01   MALE        A    Lagopus matu  7.846161 63.42758    14
-           date    sex      age         species       lat      lon count</code></pre>
+           Date    SEX      age    Species Name       lat      lon count</code></pre>
 </div>
 </div>
 </section>
@@ -1142,15 +1151,15 @@ Advanced view:
 <li>Sharing data depends on the consistent use of agreed standards.</li>
 </ul>
 </section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-
-<img data-src="img/Monster1.png" class="r-stretch"></section>
 <section id="section-7" class="slide level2">
 <h2></h2>
 
-<img data-src="img/Monster2.png" class="r-stretch"></section>
+<img data-src="img/Monster1.png" class="r-stretch"></section>
 <section id="section-8" class="slide level2">
+<h2></h2>
+
+<img data-src="img/Monster2.png" class="r-stretch"></section>
+<section id="section-9" class="slide level2">
 <h2></h2>
 
 <img data-src="img/Monster3.png" class="r-stretch"></section>
@@ -1170,7 +1179,7 @@ Advanced view:
 <h2>Using open data</h2>
 
 <img data-src="img/41559_2017_458_Fig1_HTML.webp" class="r-stretch quarto-figure-center"><p class="caption">Culina, et al.&nbsp;Navigating the unfolding open data landscape in ecology and evolution. Nat Ecol Evol 2, 420–426 (2018). https://doi.org/10.1038/s41559-017-0458-2</p></section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <iframe width="780" height="500" src="https://data.livingnorway.no/dataset?key=aea17af8-5578-4b04-b5d3-7adf0c5a1e60"></iframe>
 </section>
@@ -1193,7 +1202,7 @@ Advanced view:
 <span id="cb29-14"><a href="#cb29-14"></a><span class="fu">download.file</span>(endpoint_url, localDataLoc, <span class="at">mode =</span> <span class="st">"wb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="do">## list the files in the archive</span></span>
@@ -1214,7 +1223,7 @@ Advanced view:
 <span id="cb32-7"><a href="#cb32-7"></a>eml<span class="ot">=</span>EML<span class="sc">::</span><span class="fu">read_eml</span>(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>occurence</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1242,7 +1251,7 @@ Advanced view:
 </div>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>measure </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1264,7 +1273,7 @@ Advanced view:
 </div>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>eml<span class="sc">$</span>additionalMetadata<span class="sc">$</span>metadata<span class="sc">$</span>gbif<span class="sc">$</span>citation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1286,7 +1295,7 @@ $title
 </div>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># join measure to occurrence </span></span>
@@ -1407,7 +1416,7 @@ $title
 </div>
 </div>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Model weight by length</span></span>
@@ -1539,7 +1548,7 @@ $title
 </div>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>weight_length<span class="ot">&lt;-</span>joined_dat_clean <span class="sc">|&gt;</span> </span>
@@ -1554,9 +1563,12 @@ $title
 <span id="cb47-10"><a href="#cb47-10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Weight, Length)) <span class="sc">+</span></span>
 <span id="cb47-11"><a href="#cb47-11"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"darksalmon"</span>)<span class="sc">+</span></span>
 <span id="cb47-12"><a href="#cb47-12"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<p><img data-src="Data_handling_and_curation_from_raw_to_clean_data_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
 </div>
-<img data-src="Data_handling_and_curation_from_raw_to_clean_data_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"><div class="footer footer-default">
+</div>
+<p><img src="img/Leaf_LN.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
 </section>
