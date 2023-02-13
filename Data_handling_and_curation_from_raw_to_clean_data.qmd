@@ -176,6 +176,12 @@ messy_data |> data.table::data.table()
 
 ```
 
+## Tidy data
+![](img/data-science.png)
+
+## Tidy data principles
+![](img/tidy-1.png)
+
 ## Code style
 
 What are attributes of good code?
