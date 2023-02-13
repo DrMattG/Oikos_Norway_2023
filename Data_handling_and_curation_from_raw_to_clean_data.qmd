@@ -165,6 +165,12 @@ penguins_long |>
 
 ```
 
+## Tidy data
+![](img/data-science.png)
+
+## Tidy data principles
+![](img/tidy-1.png)
+
 ## Messy data
 
 Look at the messy data dataset. How would you go about cleaning this dataset?
@@ -176,11 +182,6 @@ messy_data |> data.table::data.table()
 
 ```
 
-## Tidy data
-![](img/data-science.png)
-
-## Tidy data principles
-![](img/tidy-1.png)
 
 ## Code style
 
